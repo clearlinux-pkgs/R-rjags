@@ -4,14 +4,13 @@
 #
 Name     : R-rjags
 Version  : 4.8
-Release  : 3
+Release  : 4
 URL      : https://cran.r-project.org/src/contrib/rjags_4-8.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rjags_4-8.tar.gz
 Summary  : Bayesian Graphical Models using MCMC
 Group    : Development/Tools
 License  : GPL-2.0
 Requires: R-rjags-lib = %{version}-%{release}
-Requires: R-coda
 BuildRequires : JAGS-dev
 BuildRequires : R-coda
 BuildRequires : buildreq-R
@@ -35,10 +34,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1550856246
+export SOURCE_DATE_EPOCH=1552785550
 
 %install
-export SOURCE_DATE_EPOCH=1550856246
+export SOURCE_DATE_EPOCH=1552785550
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -74,8 +73,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library rjags|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  rjags || :
 
 
 %files
@@ -101,10 +99,7 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/rjags/help/rjags.rdx
 /usr/lib64/R/library/rjags/html/00Index.html
 /usr/lib64/R/library/rjags/html/R.css
-/usr/lib64/R/library/rjags/libs/symbols.rds
 
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/R/library/rjags/libs/rjags.so
-/usr/lib64/R/library/rjags/libs/rjags.so.avx2
-/usr/lib64/R/library/rjags/libs/rjags.so.avx512
