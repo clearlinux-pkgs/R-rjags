@@ -4,7 +4,7 @@
 #
 Name     : R-rjags
 Version  : 4.8
-Release  : 7
+Release  : 8
 URL      : https://cran.r-project.org/src/contrib/rjags_4-8.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rjags_4-8.tar.gz
 Summary  : Bayesian Graphical Models using MCMC
